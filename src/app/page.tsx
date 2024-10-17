@@ -147,7 +147,7 @@ export default function Component() {
                       {selectedEnergySubtopic === 'fats' && "Gorduras e Energia"}
                       {selectedEnergySubtopic === 'vitamins' && "Vitaminas e Energia"}
                     </h4>
-                    <p className="text-sm mb-4">{energyContent[selectedEnergySubtopic]}</p>
+                    <p className="text-sm mb-4">{selectedEnergySubtopic && energyContent[selectedEnergySubtopic]}</p>
                     <Button onClick={() => setSelectedEnergySubtopic('overview')} variant="outline" className="w-full">
                       Voltar aos subtópicos de energia
                     </Button>
