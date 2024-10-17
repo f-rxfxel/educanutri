@@ -2,8 +2,20 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Pizza, Apple, Fish, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { Amatic_SC } from '@next/font/google'
+import Frutinha from '@/components/assets/Frutinha'
+import Queijo from '@/components/assets/Queijo'
+import Peixe from '@/components/assets/Peixe'
+
+const amatic = Amatic_SC({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-amatic',
+})
+
+
 
 type Topic = 'immune' | 'weight' | 'heart' | 'energy' | 'mental' | null;
 type EnergySubtopic = 'overview' | 'carbs' | 'proteins' | 'fats' | 'vitamins' | null;
@@ -55,46 +67,50 @@ export default function Component() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen bg-white p-6 text-gray-700">
       <div className="w-full max-w-md">
-        <div className="flex justify-center space-x-4 mb-6">
-          <Pizza className="text-[#FFA07A] w-8 h-8" />
-          <Apple className="text-[#DDA0DD] w-8 h-8" />
-          <Fish className="text-[#98FB98] w-8 h-8" />
+        <div className="flex space-x-4 mb-6">
+          <Frutinha />
+          <Peixe />
+          <Queijo />
         </div>
         
-        <h1 className="text-4xl font-light tracking-widest text-center mb-6">EDUCANUTRI</h1>
-        
+        <h1 className={`${amatic.className} text-[3.5rem] tracking-widest mb-6 text-[#ABA4A4] font-black`}>
+          <span className='text-[3.9rem] text-[#ABA4A4]'>E</span>
+          DUCANUTRI</h1>
+
         {!isStarted ? (
           <>
-            <h2 className="text-xl font-medium mb-2">Por que se alimentar bem?</h2>
+            <h2 className="text-xl font-medium mb-2 text-[#ABA4A4]">Por que se alimentar bem?</h2>
             
             <p className="text-sm mb-6">
               Com a alimentação saudável, o corpo recebe os nutrientes, vitaminas e
               minerais necessários para funcionar adequadamente e prevenir doenças.
             </p>
             
-            <p className="text-sm text-[#00CED1] mb-1">Ana Carolina Brasil Bernardes</p>
-            <p className="text-xs mb-6">Nutricionista</p>
+            <div className="mb-6 flex gap-2">
+              <p className="text-sm text-[#8CE5FD]">Ana Carolina Brasil Bernardes</p>
+              <p className="text-sm">•</p>
+              <p className="text-sm text-[#F9D1DA]">Nutricionista</p>
+            </div>
             
             <Image
-              src="/placeholder.svg?height=50&width=150"
+              src="/src/components/assets/UNIVAS.png"
               alt="UNIVAS Logo"
               width={150}
               height={50}
-              className="mb-6"
             />
-            
-            <Button 
-              onClick={handleStart}
-              className="w-full"
-            >
-              Iniciar
-            </Button>
+            <div className="w-full flex justify-center">
+              <Button 
+                onClick={handleStart}
+                className="rounded-full m-auto px-6 py-5 bg-[#FBFBF9] border-[2px] border-[#ABA4A4] text-[#ABA4A4] font-semibold text-md"
+              >
+                Iniciar
+              </Button>
+            </div>
           </>
         ) : (
           <div className="mt-6">
-            <h2 className="text-xl font-medium mb-4">Bem-vindo ao EDUCANUTRI!</h2>
+            <h2 className="text-xl font-medium mb-4 text-[#ABA4A4]">Bem-vindo ao EDUCANUTRI!</h2>
             {selectedTopic === null ? (
               <>
                 <p className="text-sm mb-4">
@@ -148,7 +164,7 @@ export default function Component() {
                       {selectedEnergySubtopic === 'vitamins' && "Vitaminas e Energia"}
                     </h4>
                     <p className="text-sm mb-4">{selectedEnergySubtopic && energyContent[selectedEnergySubtopic]}</p>
-                    <Button onClick={() => setSelectedEnergySubtopic('overview')} variant="outline" className="w-full">
+                    <Button onClick={() => setSelectedEnergySubtopic('overview')} variant="secondary" className="w-full">
                       Voltar aos subtópicos de energia
                     </Button>
                   </>
@@ -170,12 +186,11 @@ export default function Component() {
               className="w-full mt-4"
               variant="secondary"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeft size={64} className="mr-2" />
               Voltar
             </Button>
           </div>
         )}
       </div>
-    </div>
   )
 }
