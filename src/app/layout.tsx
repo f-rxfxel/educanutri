@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br' className='flex flex-col items-center justify-between h-screen'>
-      <body className={`${figtree.className} antialiased h-screen`}>
+      <body className={`${figtree.className} antialiased h-screen px-6 py-24`}>
         {children}
       </body>
     </html>
