@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-primary-foreground shadow',
         destructive: 'bg-destructive text-destructive-foreground shadow-sm',
-        outline: 'border border-input bg-background shadow-sm px-2 py-4',
+        outline: 'border border-input bg-background shadow-sm px-2 py-8',
         secondary:
           'text-secondary-foreground font-semibold text-xl text-[#aba4a4c0]',
         ghost: '',

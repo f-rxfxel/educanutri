@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='pt-br' className='flex flex-col items-center justify-between h-screen'>
+    <html lang='pt-br' className='flex flex-col items-center justify-between h-screen overflow-hidden'>
       <body className={`${figtree.className} antialiased h-screen px-6 py-24`}>
         {children}
       </body>

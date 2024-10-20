@@ -125,7 +125,7 @@ export default function Component() {
           <div className='w-full flex justify-center'>
             <Button
               onClick={handleStart}
-              className='rounded-full m-auto px-6 py-5 bg-[#FBFBF9] border-[2px] border-[#ABA4A4] text-[#ABA4A4] font-semibold text-xl'
+              className='rounded-full m-auto px-6 py-5 bg-[#FBFBF9] border-[1.5px] border-[#ABA4A4] text-[#ABA4A4] font-thin text-xl'
             >
               Iniciar
             </Button>
@@ -142,39 +142,39 @@ export default function Component() {
                 A nutrição adequada é fundamental para uma vida saudável. Clique
                 nos tópicos abaixo para saber mais:
               </p>
-              <div className='space-y-3'>
+              <div className='space-y-4'>
                 <Button
                   onClick={() => handleTopicSelect('immune')}
                   variant='outline'
-                  className='w-full justify-start'
+                  className='w-full justify-start h-auto py-2 px-4'
                 >
                   Fortalece o sistema imunológico
                 </Button>
                 <Button
                   onClick={() => handleTopicSelect('weight')}
                   variant='outline'
-                  className='w-full justify-start'
+                  className='w-full justify-start h-auto py-2 px-4'
                 >
                   Ajuda a manter um peso saudável
                 </Button>
                 <Button
                   onClick={() => handleTopicSelect('heart')}
                   variant='outline'
-                  className='w-full justify-start'
+                  className='w-full justify-start h-auto py-2 px-4'
                 >
                   Melhora a saúde cardiovascular
                 </Button>
                 <Button
                   onClick={() => handleTopicSelect('energy')}
                   variant='outline'
-                  className='w-full justify-start'
+                  className='w-full justify-start h-auto py-2 px-4'
                 >
                   Aumenta os níveis de energia
                 </Button>
                 <Button
                   onClick={() => handleTopicSelect('mental')}
                   variant='outline'
-                  className='w-full justify-start'
+                  className='w-full justify-start h-auto py-2 px-4'
                 >
                   Promove uma melhor saúde mental
                 </Button>
@@ -253,14 +253,16 @@ export default function Component() {
               <p className='text-base mb-4'>{topicContent[selectedTopic]}</p>
             </div>
           )}
-          <Button
-            onClick={handleBack}
-            className='w-full mt-4'
-            variant='secondary'
-          >
-            <ArrowLeft size={64} className='mr-2' />
-            Voltar
-          </Button>
+          <div className="flex mt-4 justify-center items-center">
+            <ArrowLeft size={24} className='mt-0.5'/>
+            <Button
+              onClick={handleBack}
+              className='h-auto'
+              variant='secondary'
+            >
+              Voltar
+            </Button>
+          </div>
         </div>
       )}
     </div>
