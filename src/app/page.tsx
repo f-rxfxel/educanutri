@@ -133,9 +133,6 @@ export default function Component() {
         </>
       ) : (
         <div className='mt-6'>
-          <h2 className='text-2xl font-medium mb-4 text-[#ABA4A4]'>
-            Bem-vindo ao EDUCANUTRI!
-          </h2>
           {selectedTopic === null ? (
             <>
               <p className='text-base mb-4'>
